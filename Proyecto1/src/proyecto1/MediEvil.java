@@ -30,6 +30,7 @@ public class MediEvil extends javax.swing.JFrame {
     
     public Tablero tab;
     public boolean tablerocreado=false;
+    public static String botonPulsado;
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -63,6 +64,7 @@ public class MediEvil extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         fondo = new javax.swing.JPanel();
         tam = new javax.swing.JTextField();
+        mov = new javax.swing.JTextField();
         labelMenu = new javax.swing.JLabel();
         labelFondo = new javax.swing.JLabel();
 
@@ -194,9 +196,10 @@ public class MediEvil extends javax.swing.JFrame {
         bIzquierda.setBounds(770, 550, 30, 30);
 
         bAbajo.setBackground(new java.awt.Color(255, 255, 255));
-        bAbajo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bAbajo.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
         bAbajo.setForeground(new java.awt.Color(255, 255, 255));
         bAbajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flechaAbajo.jpg"))); // NOI18N
+        bAbajo.setText("ab");
         bAbajo.setPreferredSize(new java.awt.Dimension(55, 35));
         bAbajo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,14 +247,15 @@ public class MediEvil extends javax.swing.JFrame {
         getContentPane().add(fondo);
         fondo.setBounds(70, 20, 550, 550);
 
-        tam.setText("jTextField1");
         tam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tamActionPerformed(evt);
             }
         });
         getContentPane().add(tam);
-        tam.setBounds(870, 510, 59, 20);
+        tam.setBounds(890, 510, 59, 20);
+        getContentPane().add(mov);
+        mov.setBounds(890, 450, 60, 20);
 
         labelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menu.jpg"))); // NOI18N
         labelMenu.setPreferredSize(new java.awt.Dimension(1090, 833));
@@ -275,6 +279,13 @@ public class MediEvil extends javax.swing.JFrame {
 
     private void bAbajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAbajoActionPerformed
         // TODO add your handling code here:
+        botonPulsado=evt.getActionCommand();
+        if(!tablerocreado){
+            System.out.println("Tablero no creado");
+            return;
+        }
+        Movimiento movi = new Movimiento(Integer.parseInt(mov.getText()),tab);
+        movi.start();
     }//GEN-LAST:event_bAbajoActionPerformed
 
     private void bArribaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bArribaActionPerformed
@@ -356,6 +367,7 @@ public class MediEvil extends javax.swing.JFrame {
     private javax.swing.JTextField mosPer2_2;
     private javax.swing.JTextField mosPer3_1;
     private javax.swing.JTextField mosPer3_2;
+    private javax.swing.JTextField mov;
     private javax.swing.JPanel panelDado;
     private javax.swing.JPanel panelVidasJug1;
     private javax.swing.JPanel panelVidasJug2;

@@ -30,8 +30,8 @@ public class Movimiento extends Thread{
         }
     }
     
-    public boolean comprobarinicio(Personaje personaje){
-        if((personaje.posPersonajex<=0) || (personaje.posPersonajey<=0)){
+    public boolean comprobarinicioy(Personaje personaje){
+        if(personaje.posPersonajey<=0){
             return true;
         }
         else{
@@ -40,6 +40,7 @@ public class Movimiento extends Thread{
     }
     
     public void moverAbajo(int cantidad){
+        tab.getPosicion();
         if(cantidad<=0){
             return;
         }
@@ -48,7 +49,6 @@ public class Movimiento extends Thread{
             
             tab.matrizL[tab.tam-1][tab.guerrero1.posPersonajex]=0;
             tab.matrizG[tab.tam-1][tab.guerrero1.posPersonajex].setIcon(null);
-           
             tab.guerrero1.posPersonajex=0;
             tab.guerrero1.posPersonajey=0;
             
@@ -64,6 +64,7 @@ public class Movimiento extends Thread{
         else{
             try {
                 //mover una posicion
+                System.out.println(tab.guerrero1.posPersonajex+","+tab.guerrero1.posPersonajey);
                 tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex]=0;
                 tab.matrizG[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex].setIcon(null);
                 tab.repintar();
@@ -80,48 +81,54 @@ public class Movimiento extends Thread{
         }
     }
     
-    /*public void moverArriba(int cantidad){
+    public void moverArriba(int cantidad){
+        tab.getPosicion();
         if(cantidad<=0){
             return;
         }
-        if(comprobarinicio()){
+        if(comprobarinicioy(tab.guerrero1)){
             cantidad=0;
-            tab.vecL[0]=0;
-            tab.vecG[0].setIcon(null);
-            tab.per.posper=tab.tam-1;
-            tab.vecL[tab.tam-1]=0;
+            tab.matrizL[0][tab.guerrero1.posPersonajex]=0;
+            tab.matrizG[0][tab.guerrero1.posPersonajex].setIcon(null);
+            tab.guerrero1.posPersonajex=tab.tam-1;
+            tab.guerrero1.posPersonajey=tab.tam-1;
+            
+            if(tab.tam%2==1){
+                tab.matrizL[(tab.tam-1)-((tab.tam-1)/2)][(tab.tam-1)-((tab.tam-1)/2)]=7;
+            }
+            else{
+                tab.matrizL[((tab.tam/2))][((tab.tam/2)+1)-1]=7;
+            }
             tab.repintar();
             return;
         }
         else{
             try {
                 //mover una posicion
-                tab.vecL[tab.per.posper]=0;
-                tab.vecG[tab.per.posper].setIcon(null);
+                tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex]=0;
+                tab.matrizG[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex].setIcon(null);
                 tab.repintar();
-                tab.per.posper-=1;
-                tab.vecL[tab.per.posper]=1;
+                tab.guerrero1.posPersonajey-=1;
+                tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex]=7;
                 tab.repintar();
                 cantidad--;
-                Thread.sleep(500);
+                Thread.sleep(1);
                 
                 moverArriba(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }*/
+    }
     
     public void run(){
         String moverAbajo="ab";
-        String moverArriba="Arriba";
+        String moverArriba="ar";
         if(MediEvil.botonPulsado.equals(moverAbajo)){
             moverAbajo(cantidad);
         }
-//        else if(MediEvil.botonPulsado.equals(moverArriba)){
-//            moverArriba(cantidad);
-//        }
-        //moverAbajo(cantidad);
-        //moverArriba(cantidad);        
+        else if(MediEvil.botonPulsado.equals(moverArriba)){
+            moverArriba(cantidad);
+        }        
     }
 }

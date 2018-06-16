@@ -16,11 +16,6 @@ import javax.swing.ImageIcon;
 public class Personaje {
     public int posPersonajex;
     public int posPersonajey;
-    public int aux;
-    
-    public Personaje(Random aleatorio){
-        this.aux=aleatorio;
-    }
     
     public ImageIcon obtenerImagenMago1(int tamy){
         ImageIcon per=new ImageIcon(getClass().getResource("/images/mago.jpg"));

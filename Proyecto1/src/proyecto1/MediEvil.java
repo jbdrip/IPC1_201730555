@@ -210,7 +210,9 @@ public class MediEvil extends javax.swing.JFrame {
         bAbajo.setBounds(810, 550, 30, 30);
 
         bArriba.setBackground(new java.awt.Color(255, 255, 255));
+        bArriba.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
         bArriba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flechaArriba.jpg"))); // NOI18N
+        bArriba.setText("ar");
         bArriba.setPreferredSize(new java.awt.Dimension(55, 35));
         bArriba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,6 +292,13 @@ public class MediEvil extends javax.swing.JFrame {
 
     private void bArribaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bArribaActionPerformed
         // TODO add your handling code here:
+        botonPulsado=evt.getActionCommand();
+        if(!tablerocreado){
+            System.out.println("Tablero no creado");
+            return;
+        }
+        Movimiento movi = new Movimiento(Integer.parseInt(mov.getText()),tab);
+        movi.start();
     }//GEN-LAST:event_bArribaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

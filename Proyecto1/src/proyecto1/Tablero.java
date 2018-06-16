@@ -53,45 +53,68 @@ public class Tablero{
         llenarVidas();
         
         //numero 3 mago jugador 1
-        matrizL[mago1.aleatorio.nextInt(tam)][mago1.aleatorio.nextInt(tam)]=3;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=3;
         mago1= new Personaje();
-        mago1.posPersonajex=mago1.aleatorio.nextInt(tam);
-        mago1.posPersonajey=mago1.aleatorio.nextInt(tam);
     
         //numero 4 mago jugador 2
-        matrizL[mago2.aleatorio.nextInt(tam)][mago2.aleatorio.nextInt(tam)]=4;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=4;
         mago2= new Personaje();
-        mago2.posPersonajex=mago2.aleatorio.nextInt(tam);
-        mago2.posPersonajey=mago2.aleatorio.nextInt(tam);
         
         //numero 5 princesa jugador 1
-        matrizL[princesa1.aleatorio.nextInt(tam)][princesa1.aleatorio.nextInt(tam)]=5;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=5;
         princesa1= new Personaje();
-        princesa1.posPersonajex=princesa1.aleatorio.nextInt(tam);
-        princesa1.posPersonajey=princesa1.aleatorio.nextInt(tam);
         
         //numero 6 princesa jugador 2
-        matrizL[princesa2.aleatorio.nextInt(tam)][princesa2.aleatorio.nextInt(tam)]=6;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=6;
         princesa2= new Personaje();
-        princesa2.posPersonajex=princesa2.aleatorio.nextInt(tam);
-        princesa2.posPersonajey=princesa2.aleatorio.nextInt(tam);
         
         //numero 7 guerrero jugador 1
-        matrizL[guerrero1.aleatorio.nextInt(tam)][guerrero1.aleatorio.nextInt(tam)]=7;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=7;
         guerrero1= new Personaje();
-        guerrero1.posPersonajex=guerrero1.aleatorio.nextInt(tam);
-        guerrero1.posPersonajey=guerrero1.aleatorio.nextInt(tam);
         
         //numero 8 guerrero jugador 2
-        matrizL[guerrero2.aleatorio.nextInt(tam)][guerrero2.aleatorio.nextInt(tam)]=8;
+        matrizL[aleatorio.nextInt(tam)][aleatorio.nextInt(tam)]=8;
         guerrero2= new Personaje();
-        guerrero2.posPersonajex=guerrero2.aleatorio.nextInt(tam);  
-        guerrero2.posPersonajey=guerrero2.aleatorio.nextInt(tam);
         
         bomba=new Bomba();
         vida = new Vida();
     
         repintar();
+    }
+    
+    public void getPosicion(){
+        for(int i=0; i<tam; i++){
+            for(int j=0; j<tam; j++){
+                switch (matrizL[i][j]) {
+                    case 3:
+                        mago1.posPersonajex=j;
+                        mago1.posPersonajey=i;
+                        break;
+                    case 4:
+                        mago2.posPersonajex=j;
+                        mago2.posPersonajey=i;
+                        break;
+                    case 5:
+                        princesa1.posPersonajex=j;
+                        princesa1.posPersonajey=i;
+                        break;
+                    case 6:
+                        princesa2.posPersonajex=j;
+                        princesa2.posPersonajey=i;
+                        break;
+                    case 7:
+                        guerrero1.posPersonajex=j;
+                        guerrero1.posPersonajey=i;
+                        break;
+                    case 8:
+                        guerrero2.posPersonajex=j;
+                        guerrero2.posPersonajey=i;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
     
     public void llenarBombas(){

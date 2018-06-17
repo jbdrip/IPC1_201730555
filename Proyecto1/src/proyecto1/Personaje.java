@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 public class Personaje {
     public int posPersonajex;
     public int posPersonajey;
+    public int turno;
     
     public ImageIcon obtenerImagenMago1(int tamy){
         ImageIcon per=new ImageIcon(getClass().getResource("/images/mago.jpg"));

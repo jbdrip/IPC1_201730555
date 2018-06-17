@@ -7,6 +7,7 @@ package proyecto1;
 
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -29,6 +30,7 @@ public class MediEvil extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     public Tablero tab;
+    public Cronometro cronometro;
     public boolean tablerocreado=false;
     public static String botonPulsado;
     
@@ -62,10 +64,11 @@ public class MediEvil extends javax.swing.JFrame {
         labelMostrarAcc = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         fondo = new javax.swing.JPanel();
-        tam = new javax.swing.JTextField();
         mov = new javax.swing.JTextField();
-        labelMenu = new javax.swing.JLabel();
+        iniciarJuego = new javax.swing.JButton();
         labelFondo = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        labelMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -90,32 +93,32 @@ public class MediEvil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mosPer1_1);
-        mosPer1_1.setBounds(950, 130, 80, 20);
+        mosPer1_1.setBounds(950, 160, 80, 20);
         mosPer1_1.setEnabled(false);
 
         mosPer2_1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         getContentPane().add(mosPer2_1);
-        mosPer2_1.setBounds(950, 170, 80, 20);
+        mosPer2_1.setBounds(950, 200, 80, 20);
         mosPer2_1.setEnabled(false);
 
         mosPer3_1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         getContentPane().add(mosPer3_1);
-        mosPer3_1.setBounds(950, 210, 80, 20);
+        mosPer3_1.setBounds(950, 240, 80, 20);
         mosPer3_1.setEnabled(false);
 
         mosPer1_2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         getContentPane().add(mosPer1_2);
-        mosPer1_2.setBounds(950, 300, 80, 20);
+        mosPer1_2.setBounds(950, 330, 80, 20);
         mosPer1_2.setEnabled(false);
 
         mosPer2_2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         getContentPane().add(mosPer2_2);
-        mosPer2_2.setBounds(950, 340, 80, 20);
+        mosPer2_2.setBounds(950, 370, 80, 20);
         mosPer2_2.setEnabled(false);
 
         mosPer3_2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         getContentPane().add(mosPer3_2);
-        mosPer3_2.setBounds(950, 380, 80, 20);
+        mosPer3_2.setBounds(950, 410, 80, 20);
         mosPer3_2.setEnabled(false);
         getContentPane().add(panelVidasJug1);
         panelVidasJug1.setBounds(810, 160, 100, 110);
@@ -150,34 +153,34 @@ public class MediEvil extends javax.swing.JFrame {
         labelPerJug1.setForeground(new java.awt.Color(255, 255, 255));
         labelPerJug1.setText("PERSONAJES");
         getContentPane().add(labelPerJug1);
-        labelPerJug1.setBounds(940, 90, 100, 20);
+        labelPerJug1.setBounds(940, 120, 100, 20);
 
         labelPerJug2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelPerJug2.setForeground(new java.awt.Color(255, 255, 255));
         labelPerJug2.setText("PERSONAJES");
         getContentPane().add(labelPerJug2);
-        labelPerJug2.setBounds(940, 260, 94, 20);
+        labelPerJug2.setBounds(940, 290, 94, 20);
 
         labelTiempo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelTiempo.setForeground(new java.awt.Color(255, 255, 255));
         labelTiempo.setText("TIEMPO");
         getContentPane().add(labelTiempo);
-        labelTiempo.setBounds(720, 50, 57, 20);
+        labelTiempo.setBounds(710, 60, 57, 20);
 
         labelCronometro.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         labelCronometro.setForeground(new java.awt.Color(255, 255, 255));
         labelCronometro.setText("00:00");
         getContentPane().add(labelCronometro);
-        labelCronometro.setBounds(830, 40, 60, 40);
+        labelCronometro.setBounds(820, 50, 60, 40);
         getContentPane().add(panelDado);
-        panelDado.setBounds(970, 470, 40, 40);
+        panelDado.setBounds(970, 480, 40, 40);
 
         bTirar.setBackground(new java.awt.Color(0, 153, 153));
         bTirar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bTirar.setForeground(new java.awt.Color(255, 255, 255));
         bTirar.setText("TIRAR");
         getContentPane().add(bTirar);
-        bTirar.setBounds(950, 530, 80, 25);
+        bTirar.setBounds(950, 550, 80, 25);
 
         bIzquierda.setBackground(new java.awt.Color(255, 255, 255));
         bIzquierda.setFont(new java.awt.Font("Tahoma", 0, 1)); // NOI18N
@@ -253,25 +256,36 @@ public class MediEvil extends javax.swing.JFrame {
         fondo.setLayout(null);
         getContentPane().add(fondo);
         fondo.setBounds(70, 20, 550, 550);
-
-        tam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tamActionPerformed(evt);
-            }
-        });
-        getContentPane().add(tam);
-        tam.setBounds(890, 510, 59, 20);
         getContentPane().add(mov);
         mov.setBounds(890, 450, 60, 20);
+
+        iniciarJuego.setBackground(new java.awt.Color(0, 204, 0));
+        iniciarJuego.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        iniciarJuego.setForeground(new java.awt.Color(255, 255, 255));
+        iniciarJuego.setText("INICIAR JUEGO");
+        iniciarJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                iniciarJuegoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(iniciarJuego);
+        iniciarJuego.setBounds(890, 60, 145, 25);
+
+        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo1.jpg"))); // NOI18N
+        getContentPane().add(labelFondo);
+        labelFondo.setBounds(0, 0, 690, 610);
+
+        jButton2.setBackground(new java.awt.Color(0, 153, 153));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("VER RECORDS");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(890, 20, 150, 25);
 
         labelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menu.jpg"))); // NOI18N
         labelMenu.setPreferredSize(new java.awt.Dimension(1090, 833));
         getContentPane().add(labelMenu);
         labelMenu.setBounds(690, -40, 360, 688);
-
-        labelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo1.jpg"))); // NOI18N
-        getContentPane().add(labelFondo);
-        labelFondo.setBounds(0, 0, 690, 610);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -310,13 +324,9 @@ public class MediEvil extends javax.swing.JFrame {
         // TODO add your handling code here:
         fondo.removeAll();
         fondo.repaint();
-        tab=new Tablero(Integer.parseInt(tam.getText()),fondo);
+        tab=new Tablero(tab.tam,fondo);
         tablerocreado=true;
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void tamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tamActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tamActionPerformed
 
     private void bDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDerechaActionPerformed
         // TODO add your handling code here:
@@ -339,6 +349,12 @@ public class MediEvil extends javax.swing.JFrame {
         Movimiento movi = new Movimiento(Integer.parseInt(mov.getText()),tab);
         movi.start();
     }//GEN-LAST:event_bIzquierdaActionPerformed
+
+    private void iniciarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarJuegoActionPerformed
+        // TODO add your handling code here:
+        labelCronometro.setText(cronometro.min+":"+cronometro.seg);
+        cronometro.start();
+    }//GEN-LAST:event_iniciarJuegoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,7 +398,9 @@ public class MediEvil extends javax.swing.JFrame {
     private javax.swing.JButton bIzquierda;
     private javax.swing.JButton bTirar;
     public javax.swing.JPanel fondo;
+    private javax.swing.JButton iniciarJuego;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel labelCronometro;
     public static javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelJug1;
@@ -406,6 +424,5 @@ public class MediEvil extends javax.swing.JFrame {
     private javax.swing.JPanel panelDado;
     private javax.swing.JPanel panelVidasJug1;
     private javax.swing.JPanel panelVidasJug2;
-    private javax.swing.JTextField tam;
     // End of variables declaration//GEN-END:variables
 }

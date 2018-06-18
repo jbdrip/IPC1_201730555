@@ -13,8 +13,9 @@ import java.util.logging.Logger;
  * @author Javier
  */
 public class Movimiento extends Thread{
-    public int cantidad=0;
+    public int cantidad=5;
     public Tablero tab=null;
+    public Jugador jugador1, jugador2;
     
     public Movimiento(int cantidad, Tablero tablero){
         this.cantidad=cantidad;
@@ -57,6 +58,34 @@ public class Movimiento extends Thread{
         }
     }
     
+    public boolean compCasillaVaciaAbajo(Personaje personaje){
+        tab.getPosicion();
+        if((tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==2))
+        return true;
+        else return false;  
+    }
+    
+    public boolean compCasillaVaciaArriba(Personaje personaje){
+        tab.getPosicion();
+        if((tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==2))
+        return true;
+        else return false;  
+    }
+    
+    public boolean compCasillaVaciaDerecha(Personaje personaje){
+        tab.getPosicion();
+        if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==2))
+        return true;
+        else return false;  
+    }
+    
+    public boolean compCasillaVaciaIzquierda(Personaje personaje){
+        tab.getPosicion();
+        if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==2))
+        return true;
+        else return false;  
+    }
+    
     public void moverAbajo(int cantidad){
         tab.getPosicion();
         if(cantidad<=0){
@@ -92,7 +121,8 @@ public class Movimiento extends Thread{
                 cantidad--;
                 Thread.sleep(5);
                 
-                moverAbajo(cantidad);
+                if(compCasillaVaciaAbajo(tab.guerrero1))moverAbajo(cantidad);
+                else moverIzquierda(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -132,7 +162,8 @@ public class Movimiento extends Thread{
                 cantidad--;
                 Thread.sleep(5);
                 
-                moverArriba(cantidad);
+                if(compCasillaVaciaArriba(tab.guerrero1))moverArriba(cantidad);
+                else moverDerecha(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -172,7 +203,8 @@ public class Movimiento extends Thread{
                 cantidad--;
                 Thread.sleep(5);
                 
-                moverIzquierda(cantidad);
+                if(compCasillaVaciaIzquierda(tab.guerrero1))moverIzquierda(cantidad);
+                else moverAbajo(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -214,7 +246,8 @@ public class Movimiento extends Thread{
                 cantidad--;
                 Thread.sleep(5);
                 
-                moverDerecha(cantidad);
+                if(compCasillaVaciaDerecha(tab.guerrero1))moverDerecha(cantidad);
+                else moverArriba(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
             }

@@ -22,8 +22,7 @@ public class Tablero{
     public Personaje mago1, mago2, princesa1, princesa2, guerrero1, guerrero2;
     public Bomba bomba;
     public Vida vida;
-    
-    
+   
     public static int[][] matrizL;
     public JLabel[][] matrizG;
     

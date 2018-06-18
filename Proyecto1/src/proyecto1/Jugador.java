@@ -7,7 +7,7 @@ package proyecto1;
 
 /**
  *
- * @author Jose
+ * @author Javier
  */
 public class Jugador {
     private String nombre;

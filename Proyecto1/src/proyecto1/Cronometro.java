@@ -5,13 +5,16 @@
  */
 package proyecto1;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Javier
  */
 public class Cronometro extends Thread{
-    public int min;
-    public int seg;
+    public int min=2;
+    public int seg=60;
     
     public void run(){
         do{
@@ -23,7 +26,13 @@ public class Cronometro extends Thread{
                     min--;
                 }
             }
+            try {
+                Thread.sleep(5);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        
         while(min>=0);
     }
 }

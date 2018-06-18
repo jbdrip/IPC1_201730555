@@ -17,6 +17,24 @@ public class Personaje {
     public int posPersonajex;
     public int posPersonajey;
     public int turno;
+    public Tablero tab;
+    public Jugador jugador1, jugador2;
+    
+    public void ataqueGuerrero1(){
+        tab.getPosicion();
+        if((tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==8)){
+            jugador2.cantVidas--;
+        }
+        else if((tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==4) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==6) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==8)){
+            jugador2.cantVidas--;
+        }
+        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==8)){
+            jugador2.cantVidas--;
+        }
+        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==8)){
+            jugador2.cantVidas--;
+        }
+    }
     
     public ImageIcon obtenerImagenMago1(int tamy){
         ImageIcon per=new ImageIcon(getClass().getResource("/images/mago.jpg"));

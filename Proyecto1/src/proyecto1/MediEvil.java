@@ -32,7 +32,10 @@ public class MediEvil extends javax.swing.JFrame {
     public Tablero tab;
     public Cronometro cronometro;
     public boolean tablerocreado=false;
+    public boolean vidasJug1Creado=false;
+    public boolean vidasJug2Creado=false;
     public static String botonPulsado;
+    public Vida vidasJug1, vidasJug2;
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -121,7 +124,7 @@ public class MediEvil extends javax.swing.JFrame {
         mosPer3_2.setBounds(950, 410, 80, 20);
         mosPer3_2.setEnabled(false);
         getContentPane().add(panelVidasJug1);
-        panelVidasJug1.setBounds(810, 160, 100, 110);
+        panelVidasJug1.setBounds(810, 160, 100, 100);
 
         labelJug1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelJug1.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +132,7 @@ public class MediEvil extends javax.swing.JFrame {
         getContentPane().add(labelJug1);
         labelJug1.setBounds(700, 120, 90, 20);
         getContentPane().add(panelVidasJug2);
-        panelVidasJug2.setBounds(810, 330, 100, 110);
+        panelVidasJug2.setBounds(810, 330, 100, 100);
 
         labelJug2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelJug2.setForeground(new java.awt.Color(255, 255, 255));
@@ -239,7 +242,7 @@ public class MediEvil extends javax.swing.JFrame {
         labelMostrarAcc.setForeground(new java.awt.Color(255, 255, 255));
         labelMostrarAcc.setText("Turno jugador 1");
         getContentPane().add(labelMostrarAcc);
-        labelMostrarAcc.setBounds(710, 470, 220, 20);
+        labelMostrarAcc.setBounds(710, 470, 120, 20);
 
         jButton1.setText("jButton1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -326,6 +329,16 @@ public class MediEvil extends javax.swing.JFrame {
         fondo.repaint();
         tab=new Tablero(tab.tam,fondo);
         tablerocreado=true;
+        
+        panelVidasJug1.removeAll();
+        panelVidasJug1.repaint();
+        vidasJug1=new Vida(vidasJug1.tam,panelVidasJug1);
+        vidasJug1Creado=true;
+        
+        panelVidasJug2.removeAll();
+        panelVidasJug2.repaint();
+        vidasJug2=new Vida(vidasJug2.tam,panelVidasJug2);
+        vidasJug2Creado=true;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void bDerechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bDerechaActionPerformed

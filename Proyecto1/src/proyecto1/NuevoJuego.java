@@ -210,18 +210,33 @@ public class NuevoJuego extends javax.swing.JFrame {
         //jugador1.mago.turno=(int) spinnerMago1.getModel().getValue();
         cronometro=new Cronometro();
         if((parseInt(dimensionesTab.getText())<8) || (parseInt(dimensionesTab.getText())>18)){
-            JOptionPane.showMessageDialog(null, "Error el tamanio del tablero esta afuera de los limites posibles");//showInputDialog(null,"Error el tamanio del tablero esta afuera de los limites posibles", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error el tamanio del tablero esta afuera de los limites posibles");
+        }
+        else if((spinnerPrincesa1.getValue()==spinnerMago1.getValue()) || (spinnerPrincesa1.getValue()==spinnerGuerrero1.getValue())){
+            JOptionPane.showMessageDialog(null, "Error los personajes no pueden tener el mismo orden");
+        }
+        else if((spinnerGuerrero1.getValue()==spinnerMago1.getValue()) || (spinnerGuerrero1.getValue()==spinnerPrincesa1.getValue())){
+            JOptionPane.showMessageDialog(null, "Error los personajes no pueden tener el mismo orden");
         }
         else{
+            jugador1.mago.turno=(int) spinnerMago1.getValue();
+            jugador1.princesa.turno=(int) spinnerPrincesa1.getValue();
+            jugador1.guerrero.turno=(int) spinnerGuerrero1.getValue();
+            
+            jugador2.mago.turno=(int) spinnerMago2.getValue();
+            jugador2.princesa.turno=(int) spinnerPrincesa2.getValue();
+            jugador2.guerrero.turno=(int) spinnerGuerrero2.getValue();
+            
+            cronometro.min=(int) spinnerCronometro.getValue();
+            
             tab.tam=parseInt(dimensionesTab.getText());
+            
             mediEvil=new MediEvil();
             mediEvil.setSize(1066,650);
             mediEvil.setVisible(true);
         }
-//        cronometro.min=(int) boxTiempo.getSelectedItem();
-        
-
-        
+      
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void dimensionesTabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dimensionesTabActionPerformed

@@ -58,7 +58,6 @@ public class MediEvil extends javax.swing.JFrame {
         labelPerJug2 = new javax.swing.JLabel();
         labelTiempo = new javax.swing.JLabel();
         labelCronometro = new javax.swing.JLabel();
-        panelDado = new javax.swing.JPanel();
         bTirar = new javax.swing.JButton();
         bIzquierda = new javax.swing.JButton();
         bAbajo = new javax.swing.JButton();
@@ -71,6 +70,7 @@ public class MediEvil extends javax.swing.JFrame {
         iniciarJuego = new javax.swing.JButton();
         labelFondo = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        panelDado = new javax.swing.JLabel();
         labelMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -175,13 +175,16 @@ public class MediEvil extends javax.swing.JFrame {
         labelCronometro.setText("00:00");
         getContentPane().add(labelCronometro);
         labelCronometro.setBounds(820, 50, 60, 40);
-        getContentPane().add(panelDado);
-        panelDado.setBounds(970, 480, 40, 40);
 
         bTirar.setBackground(new java.awt.Color(0, 153, 153));
         bTirar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         bTirar.setForeground(new java.awt.Color(255, 255, 255));
         bTirar.setText("TIRAR");
+        bTirar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bTirarActionPerformed(evt);
+            }
+        });
         getContentPane().add(bTirar);
         bTirar.setBounds(950, 550, 80, 25);
 
@@ -251,7 +254,7 @@ public class MediEvil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(870, 480, 73, 23);
+        jButton1.setBounds(850, 480, 73, 23);
 
         fondo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 7));
         fondo.setOpaque(false);
@@ -259,8 +262,14 @@ public class MediEvil extends javax.swing.JFrame {
         fondo.setLayout(null);
         getContentPane().add(fondo);
         fondo.setBounds(70, 20, 550, 550);
+
+        mov.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                movActionPerformed(evt);
+            }
+        });
         getContentPane().add(mov);
-        mov.setBounds(890, 450, 60, 20);
+        mov.setBounds(850, 450, 60, 20);
 
         iniciarJuego.setBackground(new java.awt.Color(0, 204, 0));
         iniciarJuego.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -284,6 +293,12 @@ public class MediEvil extends javax.swing.JFrame {
         jButton2.setText("VER RECORDS");
         getContentPane().add(jButton2);
         jButton2.setBounds(890, 20, 150, 25);
+
+        panelDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dado_1.png"))); // NOI18N
+        panelDado.setText("jLabel1");
+        panelDado.setPreferredSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(panelDado);
+        panelDado.setBounds(950, 450, 80, 80);
 
         labelMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/menu.jpg"))); // NOI18N
         labelMenu.setPreferredSize(new java.awt.Dimension(1090, 833));
@@ -369,9 +384,57 @@ public class MediEvil extends javax.swing.JFrame {
         cronometro.start();
     }//GEN-LAST:event_iniciarJuegoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void movActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_movActionPerformed
+
+    private void bTirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bTirarActionPerformed
+
+        numMovimientos();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bTirarActionPerformed
+
+   
+    public int numMovimientos(){
+        
+        int numero= (int)(Math.random()*6+1);
+        
+        switch(numero){
+            
+            case 1:
+                panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_1.png")));
+                break;
+                
+            case 2:
+                 panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_2.png")));
+                break;
+                
+            case 3:
+                 panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_3.png")));
+                break;
+                
+            case 4:
+                 panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_4.png")));
+                break;
+                
+            case 5:
+                 panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_5.png")));
+                break;
+                
+            case 6:
+                 panelDado.setIcon(new ImageIcon(getClass().getResource("/images/dado_6.png")));
+                break;
+                
+            
+            
+        }
+        
+        
+        return numero;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -427,14 +490,14 @@ public class MediEvil extends javax.swing.JFrame {
     private javax.swing.JLabel labelVidasJug2;
     private javax.swing.JTextField mosJug1;
     private javax.swing.JTextField mosJug2;
-    private javax.swing.JTextField mosPer1_1;
-    private javax.swing.JTextField mosPer1_2;
-    private javax.swing.JTextField mosPer2_1;
-    private javax.swing.JTextField mosPer2_2;
-    private javax.swing.JTextField mosPer3_1;
-    private javax.swing.JTextField mosPer3_2;
+    public javax.swing.JTextField mosPer1_1;
+    public javax.swing.JTextField mosPer1_2;
+    public javax.swing.JTextField mosPer2_1;
+    public javax.swing.JTextField mosPer2_2;
+    public javax.swing.JTextField mosPer3_1;
+    public javax.swing.JTextField mosPer3_2;
     private javax.swing.JTextField mov;
-    private javax.swing.JPanel panelDado;
+    public javax.swing.JLabel panelDado;
     private javax.swing.JPanel panelVidasJug1;
     private javax.swing.JPanel panelVidasJug2;
     // End of variables declaration//GEN-END:variables

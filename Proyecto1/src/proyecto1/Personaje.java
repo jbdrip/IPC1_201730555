@@ -24,14 +24,18 @@ public class Personaje {
         tab.getPosicion();
         if((tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==8)){
             jugador2.cantVidas--;
+            jugador2.cantVidas--;
         }
         else if((tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==4) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==6) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==8)){
+            jugador2.cantVidas--;
             jugador2.cantVidas--;
         }
         else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==8)){
             jugador2.cantVidas--;
+            jugador2.cantVidas--;
         }
         else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==8)){
+            jugador2.cantVidas--;
             jugador2.cantVidas--;
         }
     }
@@ -83,4 +87,6 @@ public class Personaje {
         per=new ImageIcon(tamimagen);
         return per;
     }
+    
+
 }

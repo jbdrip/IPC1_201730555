@@ -60,30 +60,44 @@ public class Movimiento extends Thread{
     
     public boolean compCasillaVaciaAbajo(Personaje personaje){
         tab.getPosicion();
-        if((tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==2))
+        if(comprobarfiny(tab.guerrero1)){
+           return true; 
+        }
+        else if((tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey+1][tab.guerrero1.posPersonajex]==2))
         return true;
-        else return false;  
+        
+        return false;
     }
     
     public boolean compCasillaVaciaArriba(Personaje personaje){
         tab.getPosicion();
-        if((tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==2))
+        if(comprobarinicioy(tab.guerrero1)){
+            return true;
+        }
+        else if((tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==0) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==1) || (tab.matrizL[tab.guerrero1.posPersonajey-1][tab.guerrero1.posPersonajex]==2))
         return true;
+        
         else return false;  
     }
     
     public boolean compCasillaVaciaDerecha(Personaje personaje){
         tab.getPosicion();
-        if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+1]==2))
-        return true;
-        else return false;  
+        if(comprobarfinx(tab.guerrero1)) 
+            return true;
+        else if((tab.matrizL[tab.guerrero1.posPersonajey][(tab.guerrero1.posPersonajex)+1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][(tab.guerrero1.posPersonajex)+1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][(tab.guerrero1.posPersonajex)+1]==2))
+            return true;
+        else
+            return false;  
     }
     
     public boolean compCasillaVaciaIzquierda(Personaje personaje){
         tab.getPosicion();
-        if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==2))
-        return true;
-        else return false;  
+        if(comprobariniciox(tab.guerrero1))
+            return true;
+        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==0) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==1) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-1]==2))
+            return true;
+        else 
+            return false;  
     }
     
     public void moverAbajo(int cantidad){
@@ -121,7 +135,8 @@ public class Movimiento extends Thread{
                 cantidad--;
                 Thread.sleep(5);
                 
-                if(compCasillaVaciaAbajo(tab.guerrero1))moverAbajo(cantidad);
+                if(compCasillaVaciaAbajo(tab.guerrero1))
+                moverAbajo(cantidad);
                 else moverIzquierda(cantidad);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Movimiento.class.getName()).log(Level.SEVERE, null, ex);
@@ -216,7 +231,7 @@ public class Movimiento extends Thread{
         if(cantidad<=0){
             return;
         }
-        if(comprobarfiny(tab.guerrero1)){
+        if(comprobarfinx(tab.guerrero1)){
             cantidad=0;
             
             tab.matrizL[tab.guerrero1.posPersonajey][tab.tam-1]=0;

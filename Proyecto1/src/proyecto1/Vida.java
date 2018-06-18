@@ -61,14 +61,14 @@ public class Vida {
 
         for (int j = 0; j <= cantVidas; j++) {
             matrizL[0][j] = 1;
-            if(matrizL[0][4]==1){
-                cantVidas++;
-                matrizL[1][j]=1;
-            }
-            else if(matrizL[1][4]==1){
-                cantVidas++;
-                matrizL[2][j]=1;
-            }
+//            if(matrizL[0][4]==1){
+//                cantVidas++;
+//                matrizL[1][j]=1;
+//            }
+//            else if(matrizL[1][4]==1){
+//                cantVidas++;
+//                matrizL[2][j]=1;
+//            }
         }
     }
 

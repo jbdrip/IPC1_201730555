@@ -50,14 +50,14 @@ public class NuevoJuego extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         spinnerMago1 = new javax.swing.JSpinner();
-        spinnerPrincesa1 = new javax.swing.JSpinner();
-        spinnerGuerrero1 = new javax.swing.JSpinner();
-        spinnerMago2 = new javax.swing.JSpinner();
-        spinnerPrincesa2 = new javax.swing.JSpinner();
-        spinnerGuerrero2 = new javax.swing.JSpinner();
         spinnerCronometro = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
         dimensionesTab = new javax.swing.JTextField();
+        spinnerMago3 = new javax.swing.JSpinner();
+        spinnerMago4 = new javax.swing.JSpinner();
+        spinnerMago5 = new javax.swing.JSpinner();
+        spinner = new javax.swing.JSpinner();
+        spinnerJug1 = new javax.swing.JSpinner();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -95,39 +95,39 @@ public class NuevoJuego extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("MAGO:");
+        jLabel1.setText("1:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 150, 60, 17);
+        jLabel1.setBounds(60, 150, 30, 17);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("PRINCESA:");
+        jLabel2.setText("2:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(50, 190, 80, 17);
+        jLabel2.setBounds(60, 190, 14, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("GUERRERO:");
+        jLabel3.setText("3:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 230, 84, 17);
+        jLabel3.setBounds(60, 230, 14, 17);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("MAGO:");
+        jLabel4.setText("1:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(310, 150, 50, 17);
+        jLabel4.setBounds(390, 150, 20, 17);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("PRINCESA:");
+        jLabel5.setText("2:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(300, 190, 90, 17);
+        jLabel5.setBounds(390, 190, 20, 17);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("GUERRERO:");
+        jLabel6.setText("3:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(300, 230, 90, 17);
+        jLabel6.setBounds(390, 230, 20, 17);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,29 +147,9 @@ public class NuevoJuego extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(420, 330, 150, 25);
 
-        spinnerMago1.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
+        spinnerMago1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerMago1);
-        spinnerMago1.setBounds(160, 150, 50, 20);
-
-        spinnerPrincesa1.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
-        getContentPane().add(spinnerPrincesa1);
-        spinnerPrincesa1.setBounds(160, 190, 50, 20);
-
-        spinnerGuerrero1.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
-        getContentPane().add(spinnerGuerrero1);
-        spinnerGuerrero1.setBounds(160, 230, 50, 20);
-
-        spinnerMago2.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
-        getContentPane().add(spinnerMago2);
-        spinnerMago2.setBounds(409, 150, 50, 20);
-
-        spinnerPrincesa2.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
-        getContentPane().add(spinnerPrincesa2);
-        spinnerPrincesa2.setBounds(410, 190, 50, 20);
-
-        spinnerGuerrero2.setModel(new javax.swing.SpinnerNumberModel(1, null, 3, 1));
-        getContentPane().add(spinnerGuerrero2);
-        spinnerGuerrero2.setBounds(410, 230, 50, 20);
+        spinnerMago1.setBounds(440, 230, 50, 20);
 
         spinnerCronometro.setModel(new javax.swing.SpinnerNumberModel(1, null, 10, 1));
         getContentPane().add(spinnerCronometro);
@@ -188,6 +168,26 @@ public class NuevoJuego extends javax.swing.JFrame {
         });
         getContentPane().add(dimensionesTab);
         dimensionesTab.setBounds(330, 340, 50, 20);
+
+        spinnerMago3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerMago3);
+        spinnerMago3.setBounds(440, 150, 50, 20);
+
+        spinnerMago4.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerMago4);
+        spinnerMago4.setBounds(440, 190, 50, 20);
+
+        spinnerMago5.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerMago5);
+        spinnerMago5.setBounds(100, 230, 50, 20);
+
+        spinner.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinner);
+        spinner.setBounds(100, 190, 50, 20);
+
+        spinnerJug1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerJug1);
+        spinnerJug1.setBounds(100, 150, 50, 20);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoPrincipal.jpg"))); // NOI18N
         getContentPane().add(fondo);
@@ -212,22 +212,7 @@ public class NuevoJuego extends javax.swing.JFrame {
         if((parseInt(dimensionesTab.getText())<8) || (parseInt(dimensionesTab.getText())>18)){
             JOptionPane.showMessageDialog(null, "Error el tamanio del tablero esta afuera de los limites posibles");
         }
-        else if((spinnerPrincesa1.getValue()==spinnerMago1.getValue()) || (spinnerPrincesa1.getValue()==spinnerGuerrero1.getValue())){
-            JOptionPane.showMessageDialog(null, "Error los personajes no pueden tener el mismo orden");
-        }
-        else if((spinnerGuerrero1.getValue()==spinnerMago1.getValue()) || (spinnerGuerrero1.getValue()==spinnerPrincesa1.getValue())){
-            JOptionPane.showMessageDialog(null, "Error los personajes no pueden tener el mismo orden");
-        }
         else{
-            jugador1.mago.turno=(int) spinnerMago1.getValue();
-            jugador1.princesa.turno=(int) spinnerPrincesa1.getValue();
-            jugador1.guerrero.turno=(int) spinnerGuerrero1.getValue();
-            
-            jugador2.mago.turno=(int) spinnerMago2.getValue();
-            jugador2.princesa.turno=(int) spinnerPrincesa2.getValue();
-            jugador2.guerrero.turno=(int) spinnerGuerrero2.getValue();
-            
-            cronometro.min=(int) spinnerCronometro.getValue();
             
             tab.tam=parseInt(dimensionesTab.getText());
             
@@ -295,12 +280,12 @@ public class NuevoJuego extends javax.swing.JFrame {
     private javax.swing.JLabel labelPersonajes;
     private javax.swing.JTextField nomJugador1;
     private javax.swing.JTextField nomJugador2;
+    public javax.swing.JSpinner spinner;
     private javax.swing.JSpinner spinnerCronometro;
-    private javax.swing.JSpinner spinnerGuerrero1;
-    private javax.swing.JSpinner spinnerGuerrero2;
-    private javax.swing.JSpinner spinnerMago1;
-    private javax.swing.JSpinner spinnerMago2;
-    private javax.swing.JSpinner spinnerPrincesa1;
-    private javax.swing.JSpinner spinnerPrincesa2;
+    public javax.swing.JSpinner spinnerJug1;
+    public javax.swing.JSpinner spinnerMago1;
+    public javax.swing.JSpinner spinnerMago3;
+    public javax.swing.JSpinner spinnerMago4;
+    public javax.swing.JSpinner spinnerMago5;
     // End of variables declaration//GEN-END:variables
 }

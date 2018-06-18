@@ -49,15 +49,15 @@ public class NuevoJuego extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        spinnerMago1 = new javax.swing.JSpinner();
+        spinnerjug2_3 = new javax.swing.JSpinner();
         spinnerCronometro = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
         dimensionesTab = new javax.swing.JTextField();
-        spinnerMago3 = new javax.swing.JSpinner();
-        spinnerMago4 = new javax.swing.JSpinner();
-        spinnerMago5 = new javax.swing.JSpinner();
-        spinner = new javax.swing.JSpinner();
-        spinnerJug1 = new javax.swing.JSpinner();
+        spinnerjug2_1 = new javax.swing.JSpinner();
+        spinnerjug2_2 = new javax.swing.JSpinner();
+        spinnerjug1_3 = new javax.swing.JSpinner();
+        spinnerjug1_2 = new javax.swing.JSpinner();
+        spinnerjug1_1 = new javax.swing.JSpinner();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -133,33 +133,33 @@ public class NuevoJuego extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SELECCIONE EL TIEMPO DEL JUEGO:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 290, 270, 17);
+        jLabel7.setBounds(20, 290, 270, 17);
 
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("INICIAR JUEGO");
+        jButton1.setText("GENERAR TABLERO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(420, 330, 150, 25);
+        jButton1.setBounds(400, 330, 180, 25);
 
-        spinnerMago1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinnerMago1);
-        spinnerMago1.setBounds(440, 230, 50, 20);
+        spinnerjug2_3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug2_3);
+        spinnerjug2_3.setBounds(440, 230, 50, 20);
 
         spinnerCronometro.setModel(new javax.swing.SpinnerNumberModel(1, null, 10, 1));
         getContentPane().add(spinnerCronometro);
-        spinnerCronometro.setBounds(330, 290, 50, 20);
+        spinnerCronometro.setBounds(320, 290, 50, 20);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("DIMENSIONES DEL TABLERO:(8 A 18)");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(50, 340, 270, 17);
+        jLabel8.setBounds(20, 340, 270, 17);
 
         dimensionesTab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,27 +167,27 @@ public class NuevoJuego extends javax.swing.JFrame {
             }
         });
         getContentPane().add(dimensionesTab);
-        dimensionesTab.setBounds(330, 340, 50, 20);
+        dimensionesTab.setBounds(320, 340, 50, 20);
 
-        spinnerMago3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinnerMago3);
-        spinnerMago3.setBounds(440, 150, 50, 20);
+        spinnerjug2_1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug2_1);
+        spinnerjug2_1.setBounds(440, 150, 50, 20);
 
-        spinnerMago4.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinnerMago4);
-        spinnerMago4.setBounds(440, 190, 50, 20);
+        spinnerjug2_2.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug2_2);
+        spinnerjug2_2.setBounds(440, 190, 50, 20);
 
-        spinnerMago5.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinnerMago5);
-        spinnerMago5.setBounds(100, 230, 50, 20);
+        spinnerjug1_3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug1_3);
+        spinnerjug1_3.setBounds(100, 230, 50, 20);
 
-        spinner.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinner);
-        spinner.setBounds(100, 190, 50, 20);
+        spinnerjug1_2.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug1_2);
+        spinnerjug1_2.setBounds(100, 190, 50, 20);
 
-        spinnerJug1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
-        getContentPane().add(spinnerJug1);
-        spinnerJug1.setBounds(100, 150, 50, 20);
+        spinnerjug1_1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
+        getContentPane().add(spinnerjug1_1);
+        spinnerjug1_1.setBounds(100, 150, 50, 20);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoPrincipal.jpg"))); // NOI18N
         getContentPane().add(fondo);
@@ -209,13 +209,18 @@ public class NuevoJuego extends javax.swing.JFrame {
         
         //jugador1.mago.turno=(int) spinnerMago1.getModel().getValue();
         cronometro=new Cronometro();
-        if((parseInt(dimensionesTab.getText())<8) || (parseInt(dimensionesTab.getText())>18)){
-            JOptionPane.showMessageDialog(null, "Error el tamanio del tablero esta afuera de los limites posibles");
+        if((spinnerjug1_1.getValue()==spinnerjug1_2.getValue()) ||(spinnerjug1_1.getValue()==spinnerjug1_3.getValue()) || (spinnerjug1_2.getValue()==spinnerjug1_3.getValue())
+                || (spinnerjug2_1.getValue()==spinnerjug2_3.getValue()) || (spinnerjug2_1.getValue()==spinnerjug2_2.getValue()) || (spinnerjug2_2.getValue()==spinnerjug2_3.getValue())){
+            JOptionPane.showMessageDialog(null, "Error en el orden de personajes, intentalo de nuevo.");
+        }
+        else if((parseInt(dimensionesTab.getText())<8) || (parseInt(dimensionesTab.getText())>18)){
+            JOptionPane.showMessageDialog(null, "Error el tamanio del tablero esta afuera de los limites posibles.");
         }
         else{
             
             tab.tam=parseInt(dimensionesTab.getText());
             
+            this.dispose();
             mediEvil=new MediEvil();
             mediEvil.setSize(1066,650);
             mediEvil.setVisible(true);
@@ -280,12 +285,12 @@ public class NuevoJuego extends javax.swing.JFrame {
     private javax.swing.JLabel labelPersonajes;
     private javax.swing.JTextField nomJugador1;
     private javax.swing.JTextField nomJugador2;
-    public javax.swing.JSpinner spinner;
     private javax.swing.JSpinner spinnerCronometro;
-    public javax.swing.JSpinner spinnerJug1;
-    public javax.swing.JSpinner spinnerMago1;
-    public javax.swing.JSpinner spinnerMago3;
-    public javax.swing.JSpinner spinnerMago4;
-    public javax.swing.JSpinner spinnerMago5;
+    public javax.swing.JSpinner spinnerjug1_1;
+    public javax.swing.JSpinner spinnerjug1_2;
+    public javax.swing.JSpinner spinnerjug1_3;
+    public javax.swing.JSpinner spinnerjug2_1;
+    public javax.swing.JSpinner spinnerjug2_2;
+    public javax.swing.JSpinner spinnerjug2_3;
     // End of variables declaration//GEN-END:variables
 }

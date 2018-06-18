@@ -204,7 +204,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="290" width="270" height="-1"/>
+          <AbsoluteConstraints x="20" y="290" width="270" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -219,18 +219,18 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="INICIAR JUEGO"/>
+        <Property name="text" type="java.lang.String" value="GENERAR TABLERO"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="420" y="330" width="150" height="-1"/>
+          <AbsoluteConstraints x="400" y="330" width="180" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinnerMago1">
+    <Component class="javax.swing.JSpinner" name="spinnerjug2_3">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">
@@ -257,7 +257,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="330" y="290" width="50" height="-1"/>
+          <AbsoluteConstraints x="320" y="290" width="50" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -273,7 +273,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="340" width="270" height="-1"/>
+          <AbsoluteConstraints x="20" y="340" width="270" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -283,11 +283,11 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="330" y="340" width="50" height="-1"/>
+          <AbsoluteConstraints x="320" y="340" width="50" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinnerMago3">
+    <Component class="javax.swing.JSpinner" name="spinnerjug2_1">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">
@@ -306,7 +306,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinnerMago4">
+    <Component class="javax.swing.JSpinner" name="spinnerjug2_2">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">
@@ -325,7 +325,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinnerMago5">
+    <Component class="javax.swing.JSpinner" name="spinnerjug1_3">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">
@@ -344,7 +344,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinner">
+    <Component class="javax.swing.JSpinner" name="spinnerjug1_2">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">
@@ -363,7 +363,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spinnerJug1">
+    <Component class="javax.swing.JSpinner" name="spinnerjug1_1">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
           <SpinnerModel type="list">

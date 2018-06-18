@@ -12,6 +12,7 @@ import java.util.logging.Logger;
  *
  * @author Javier
  */
+
 public class Movimiento extends Thread{
     public int cantidad=5;
     public Tablero tab=null;

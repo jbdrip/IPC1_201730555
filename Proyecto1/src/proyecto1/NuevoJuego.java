@@ -149,9 +149,9 @@ public class NuevoJuego extends javax.swing.JFrame {
 
         spinnerjug2_3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug2_3);
-        spinnerjug2_3.setBounds(440, 230, 50, 20);
+        spinnerjug2_3.setBounds(440, 230, 80, 20);
 
-        spinnerCronometro.setModel(new javax.swing.SpinnerNumberModel(1, null, 10, 1));
+        spinnerCronometro.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
         getContentPane().add(spinnerCronometro);
         spinnerCronometro.setBounds(320, 290, 50, 20);
 
@@ -171,23 +171,23 @@ public class NuevoJuego extends javax.swing.JFrame {
 
         spinnerjug2_1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug2_1);
-        spinnerjug2_1.setBounds(440, 150, 50, 20);
+        spinnerjug2_1.setBounds(440, 150, 80, 20);
 
         spinnerjug2_2.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug2_2);
-        spinnerjug2_2.setBounds(440, 190, 50, 20);
+        spinnerjug2_2.setBounds(440, 190, 80, 20);
 
         spinnerjug1_3.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug1_3);
-        spinnerjug1_3.setBounds(100, 230, 50, 20);
+        spinnerjug1_3.setBounds(100, 230, 80, 20);
 
         spinnerjug1_2.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug1_2);
-        spinnerjug1_2.setBounds(100, 190, 50, 20);
+        spinnerjug1_2.setBounds(100, 190, 80, 20);
 
         spinnerjug1_1.setModel(new javax.swing.SpinnerListModel(new String[] {"Mago", "Guerrero", "Princesa"}));
         getContentPane().add(spinnerjug1_1);
-        spinnerjug1_1.setBounds(100, 150, 50, 20);
+        spinnerjug1_1.setBounds(100, 150, 80, 20);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoPrincipal.jpg"))); // NOI18N
         getContentPane().add(fondo);
@@ -208,8 +208,14 @@ public class NuevoJuego extends javax.swing.JFrame {
         jugador2.setNombre(nomJugador2.getText());
         
         //jugador1.mago.turno=(int) spinnerMago1.getModel().getValue();
-        cronometro=new Cronometro();
-        if((spinnerjug1_1.getValue()==spinnerjug1_2.getValue()) ||(spinnerjug1_1.getValue()==spinnerjug1_3.getValue()) || (spinnerjug1_2.getValue()==spinnerjug1_3.getValue())
+        //cronometro=new Cronometro(mediEvil.labelCronometro, (int) spinnerCronometro.getValue());
+        //cronometro.start();
+        String nom1=nomJugador1.getText();
+        String nom2=nomJugador2.getText();
+        if((nom1.equals("")) || (nom2.equals(""))){
+            JOptionPane.showMessageDialog(null, "Error no se ha ingresado el nombre de los jugadores.");
+        }
+        else if((spinnerjug1_1.getValue()==spinnerjug1_2.getValue()) ||(spinnerjug1_1.getValue()==spinnerjug1_3.getValue()) || (spinnerjug1_2.getValue()==spinnerjug1_3.getValue())
                 || (spinnerjug2_1.getValue()==spinnerjug2_3.getValue()) || (spinnerjug2_1.getValue()==spinnerjug2_2.getValue()) || (spinnerjug2_2.getValue()==spinnerjug2_3.getValue())){
             JOptionPane.showMessageDialog(null, "Error en el orden de personajes, intentalo de nuevo.");
         }

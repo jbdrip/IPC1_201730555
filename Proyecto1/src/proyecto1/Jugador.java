@@ -12,7 +12,7 @@ package proyecto1;
 public class Jugador {
     private String nombre;
     public Personaje mago, princesa, guerrero;
-    public int cantVidas;
+    public int cantVidas=5;
     
     public Jugador(){
         cantVidas=5;

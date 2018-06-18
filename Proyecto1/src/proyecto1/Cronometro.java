@@ -7,32 +7,64 @@ package proyecto1;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Javier
  */
 public class Cronometro extends Thread{
-    public int min=2;
-    public int seg=60;
-    
-    public void run(){
-        do{
-            if(seg!=0){
-                seg--;
-            }else{
-                if(min!=0){
-                    seg=59;
-                    min--;
+    JLabel label;
+    int tiempo;
+
+    public Cronometro(JLabel label, int tiempo) {
+        this.tiempo = tiempo;
+        this.label = label;
+    }
+
+    public void run() {
+        int segundos = 60;
+        int minutos = tiempo;
+        for (int i = tiempo-1; i >=0; i--) {
+            minutos = i;
+            for (int j = 60; j >= 0; j--) {
+                segundos = j;
+                if (minutos < 10) {
+                    if (segundos < 10) {
+                        try {
+                            label.setText("0"+minutos+":0"+segundos);
+                            sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        try {
+                            label.setText("0"+minutos+":"+segundos);
+                            sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                } else {
+                    if (segundos < 10) {
+                        try {
+                            label.setText(minutos+":0"+segundos);
+                            sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        try {
+                            label.setText(minutos+":"+segundos);
+                            sleep(1000);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
                 }
             }
-            try {
-                Thread.sleep(5);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Cronometro.class.getName()).log(Level.SEVERE, null, ex);
-            }
         }
-        
-        while(min>=0);
+        JOptionPane.showMessageDialog(null, "Gracias por jugar el timpo ha acabado.");
     }
 }

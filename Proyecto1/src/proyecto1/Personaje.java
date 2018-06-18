@@ -21,23 +21,22 @@ public class Personaje {
     public Jugador jugador1, jugador2;
     
     public void ataqueGuerrero1(){
-        tab.getPosicion();
-        if((tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==8)){
-            jugador2.cantVidas--;
-            jugador2.cantVidas--;
-        }
-        else if((tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==4) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==6) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==8)){
-            jugador2.cantVidas--;
-            jugador2.cantVidas--;
-        }
-        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==8)){
-            jugador2.cantVidas--;
-            jugador2.cantVidas--;
-        }
-        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==8)){
-            jugador2.cantVidas--;
-            jugador2.cantVidas--;
-        }
+//        if((tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey+2][tab.guerrero1.posPersonajex+2]==8)){
+//            jugador2.cantVidas--;
+//            jugador2.cantVidas--;
+//        }
+//        else if((tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==4) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==6) || (tab.matrizL[tab.guerrero1.posPersonajey-2][tab.guerrero1.posPersonajex]==8)){
+//            jugador2.cantVidas--;
+//            jugador2.cantVidas--;
+//        }
+//        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex+2]==8)){
+//            jugador2.cantVidas--;
+//            jugador2.cantVidas--;
+//        }
+//        else if((tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==4) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==6) || (tab.matrizL[tab.guerrero1.posPersonajey][tab.guerrero1.posPersonajex-2]==8)){
+//            jugador2.cantVidas--;
+//            jugador2.cantVidas--;
+//        }
     }
     
     public ImageIcon obtenerImagenMago1(int tamy){

@@ -36,6 +36,8 @@ public class MediEvil extends javax.swing.JFrame {
     public boolean vidasJug2Creado=false;
     public static String botonPulsado;
     public Vida vidasJug1, vidasJug2;
+    public Jugador jugador2;
+//    public int random=numMovimientos();
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -460,7 +462,7 @@ public class MediEvil extends javax.swing.JFrame {
     public javax.swing.JPanel fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel labelCronometro;
+    public javax.swing.JLabel labelCronometro;
     public static javax.swing.JLabel labelFondo;
     private javax.swing.JLabel labelJug1;
     private javax.swing.JLabel labelJug2;
